@@ -26,8 +26,16 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Android Emulator
-        uses: vgaidarji/android-github-actions-emulator@v1.0.1
+      - name: Create Android Emulator
+        run: |
+         sdkmanager "system-images;android-30;google_apis;x86_64"
+         echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --force
+         emulator -avd test -no-audio -no-window -gpu off &
+         adb wait-for-device
+         adb shell settings put global window_animation_scale 0
+         adb shell settings put global transition_animation_scale 0
+         adb shell settings put global animator_duration_scale 0
+         adb shell input keyevent 82 &
           
 
       - name: Run UI tests
