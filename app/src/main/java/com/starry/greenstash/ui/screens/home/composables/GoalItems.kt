@@ -68,6 +68,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
@@ -79,6 +80,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.starry.greenstash.R
+import com.starry.greenstash.ui.C
 import com.starry.greenstash.ui.theme.greenstashFont
 import com.starry.greenstash.ui.theme.greenstashNumberFont
 import kotlinx.coroutines.Dispatchers
@@ -139,7 +141,10 @@ fun GoalItemClassic(
             Column(modifier = Modifier.padding(10.dp)) {
                 Text(
                     text = title,
-                    modifier = Modifier.padding(start = 8.dp),
+                    modifier = Modifier
+                        .padding(start = 8.dp)
+                        .testTag(C.HomeScreen.goalTitleText)
+                    ,
                     fontWeight = FontWeight.Medium,
                     lineHeight = 1.2f.em,
                     fontSize = 18.sp,
@@ -150,7 +155,9 @@ fun GoalItemClassic(
                 )
                 Text(
                     text = primaryText,
-                    modifier = Modifier.padding(start = 8.dp, top = 6.dp),
+                    modifier = Modifier
+                        .padding(start = 8.dp, top = 6.dp)
+                        .testTag(C.HomeScreen.goalStatusText),
                     lineHeight = 1.25f.em,
                     fontSize = 14.sp,
                     fontFamily = greenstashFont,
@@ -217,7 +224,10 @@ fun GoalItemClassic(
                         tint = MaterialTheme.colorScheme.onSurface
                     )
                 }
-                IconButton(onClick = onEditClicked) {
+                IconButton(
+                    onClick = onEditClicked,
+                    modifier = Modifier.testTag(C.HomeScreen.editGoalButton)
+                ) {
                     Icon(
                         modifier = Modifier.size(21.dp),
                         imageVector = ImageVector.vectorResource(id = R.drawable.ic_goal_edit),

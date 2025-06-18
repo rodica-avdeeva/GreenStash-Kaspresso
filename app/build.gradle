@@ -21,7 +21,8 @@ android {
         versionCode 392
         versionName "3.9.2"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.kaspersky.kaspresso.runner.KaspressoRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
         vectorDrawables {
             useSupportLibrary true
         }
@@ -29,6 +30,10 @@ android {
         ksp {
             arg('room.schemaLocation', "$projectDir/schemas")
         }
+    }
+
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
     }
 
     buildTypes {
@@ -140,8 +145,46 @@ dependencies {
     // Testing components.
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.6.0'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso-compose-support:1.6.0'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso-allure-support:1.6.0'
+
     debugImplementation "androidx.compose.ui:ui-tooling"
     debugImplementation "androidx.compose.ui:ui-test-manifest"
 }
+
+tasks.register("clearDeviceAllureResults", Exec) {
+    group = "verification"
+    description = "Clears allure-results directory on Android device"
+
+    def adbPath = "/opt/homebrew/bin/adb"
+    commandLine adbPath, "shell", "rm", "-rf", "/storage/emulated/0/Documents/allure-results"
+    ignoreExitValue = true
+}
+
+tasks.register("deleteLocalAllureResults", Delete) {
+    group = "verification"
+    description = "Deletes local allure-results before pulling new ones"
+
+    delete "${project.buildDir}/allure-results"
+}
+
+tasks.register("pullAllureResults", Exec) {
+    group = "verification"
+    description = "Pulls allure-results from device to app/build"
+
+    dependsOn tasks.named("deleteLocalAllureResults")
+
+    def adbPath = "/opt/homebrew/bin/adb"
+    commandLine adbPath, "pull", "/storage/emulated/0/Documents/allure-results", "build"
+    ignoreExitValue = true
+}
+
+tasks.withType(com.android.build.gradle.internal.tasks.AndroidTestTask).configureEach { task ->
+    if (task.name.toLowerCase().startsWith("connected") && task.name.toLowerCase().endsWith("androidtest")) {
+        task.dependsOn tasks.named("clearDeviceAllureResults")
+        task.finalizedBy tasks.named("pullAllureResults")
+    }
+}
+
