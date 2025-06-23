@@ -38,6 +38,9 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
       - name: Run UI tests on Emulator
         uses: reactivecircus/android-emulator-runner@v2
