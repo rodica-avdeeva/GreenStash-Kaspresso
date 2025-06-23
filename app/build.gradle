@@ -176,7 +176,7 @@ tasks.register("pullAllureResults", Exec) {
 
     dependsOn tasks.named("deleteLocalAllureResults")
 
-    def adbPath = "/opt/homebrew/bin/adb"
+    def adbPath = "adb"
     commandLine adbPath, "pull", "/storage/emulated/0/Documents/allure-results", "build"
     ignoreExitValue = true
 }
