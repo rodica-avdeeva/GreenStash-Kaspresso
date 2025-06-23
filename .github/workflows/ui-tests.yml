@@ -52,22 +52,35 @@ jobs:
           arch: ${{ env.ANDROID_ARCH }}
           profile: ${{ env.ANDROID_PROFILE }}
           script: |
+            echo "📱 Ждём подключение эмулятора..."
             adb wait-for-device
-      
-            echo "📦 Проверим, виден ли instrumentation runner:"
-            adb shell pm list instrumentation
-      
-            echo "⏳ Ждём готовности UI и отключаем анимации..."
+
+            echo "📦 Проверим видимость instrumentation:"
+            adb shell pm list instrumentation | tee instrumentation.txt
+
+            echo "📁 Проверим, собрался ли тестовый APK:"
+            ls -la app/build/outputs/apk/androidTest/debug/ > apks.txt || echo "❌ APK не найден"
+
+            echo "🧾 Проверим AndroidManifest.xml из androidTest:"
+            cat app/build/outputs/apk/androidTest/debug/AndroidManifest.xml | head -n 50 > manifest.txt || echo "❌ Manifest не найден"
+
+            echo "🧘‍♂️ Отключаем анимации:"
             adb shell settings put global window_animation_scale 0
             adb shell settings put global transition_animation_scale 0
             adb shell settings put global animator_duration_scale 0
-            sleep 30
-      
-            echo "🚀 Запускаем тесты с явным указанием KaspressoRunner:"
-            ./gradlew connectedDebugAndroidTest
-              -Pandroid.testInstrumentationRunner=com.kaspersky.kaspresso.runner.KaspressoRunner
-              --stacktrace --info
 
+            echo "🚀 Запускаем тесты:"
+            ./gradlew connectedDebugAndroidTest -Pandroid.testInstrumentationRunner=com.kaspersky.kaspresso.runner.KaspressoRunner --stacktrace --info
+
+      - name: Upload debug info
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-info
+          path: |
+            instrumentation.txt
+            apks.txt
+            manifest.txt
 
       - name: Upload Allure results
         if: always()
