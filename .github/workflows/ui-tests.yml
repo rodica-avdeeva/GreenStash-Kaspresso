@@ -64,8 +64,8 @@ jobs:
             sleep 30
       
             echo "🚀 Запускаем тесты с явным указанием KaspressoRunner:"
-            ./gradlew connectedDebugAndroidTest \
-              -Pandroid.testInstrumentationRunner=com.kaspersky.kaspresso.runner.KaspressoRunner \
+            ./gradlew connectedDebugAndroidTest
+              -Pandroid.testInstrumentationRunner=com.kaspersky.kaspresso.runner.KaspressoRunner
               --stacktrace --info
 
 
