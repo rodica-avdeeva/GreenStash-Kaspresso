@@ -1,5 +1,14 @@
 name: UI Tests on Emulator (Kaspresso)
 
+env:
+  JAVA_VERSION: '17'
+  JAVA_DISTRIBUTION: 'temurin'
+  MAVEN_CACHE: maven
+
+  ANDROID_PROFILE: Nexus 6
+  ANDROID_TARGET: google_apis
+  ANDROID_API_LEVEL: 28
+  ANDROID_ARCH: x86_64
 on:
   push:
     branches: [main]
@@ -23,24 +32,13 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Accept licenses
-        run: yes | sdkmanager --licenses
-
-      - name: Install emulator and system image
-        run: |
-          sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3" \
-                     "system-images;android-30;google_apis;x86_64" "emulator"
-
-      - name: Create AVD
-        run: |
-          echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
-
-      - name: Start emulator
-        run: |
-          emulator -avd test -no-audio -no-window -no-boot-anim -gpu swiftshader &
-          adb wait-for-device
-          adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
-          adb shell input keyevent 82 # разблокировка
+      - name: Start Android Emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ env.ANDROID_API_LEVEL }}
+          target: ${{ env.ANDROID_TARGET }}
+          arch: ${{ env.ANDROID_ARCH }}
+          profile: ${{ env.ANDROID_PROFILE }}
 
       - name: Grant Gradle permissions
         run: chmod +x ./gradlew
