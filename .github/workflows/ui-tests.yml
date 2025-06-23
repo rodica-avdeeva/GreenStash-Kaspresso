@@ -39,12 +39,9 @@ jobs:
           target: ${{ env.ANDROID_TARGET }}
           arch: ${{ env.ANDROID_ARCH }}
           profile: ${{ env.ANDROID_PROFILE }}
-
-      - name: Grant Gradle permissions
-        run: chmod +x ./gradlew
-
-      - name: Run Kaspresso tests
-        run: ./gradlew connectedDebugAndroidTest
+          script: 
+            chmod +x ./gradlew
+            ./gradlew connectedDebugAndroidTest
 
       - name: Upload Allure results
         if: always()
