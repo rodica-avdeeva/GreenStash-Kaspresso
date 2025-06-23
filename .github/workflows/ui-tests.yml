@@ -1,34 +1,53 @@
-name: Test Android Emulator Boot
+name: UI Tests on Emulator (Kaspresso)
+
+env:
+  JAVA_VERSION: '21'
+  JAVA_DISTRIBUTION: 'temurin'
+
+  ANDROID_PROFILE: pixel
+  ANDROID_TARGET: google_apis
+  ANDROID_API_LEVEL: 30 
+  ANDROID_ARCH: x86_64
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch: 
 
 jobs:
-  test-emulator-start:
+  kaspresso-instrumentation-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout project
         uses: actions/checkout@v4
 
-      - name: Set up Java
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: 17
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Boot emulator and check
+      - name: Start Android Emulator and Run Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
-          target: google_apis
-          arch: x86_64
-          profile: pixel
+          api-level: ${{ env.ANDROID_API_LEVEL }}
+          target: ${{ env.ANDROID_TARGET }}
+          arch: ${{ env.ANDROID_ARCH }}
+          profile: ${{ env.ANDROID_PROFILE }}
+          disable-animations: true 
           script: |
-            echo Emulator is ready!
+            chmod +x ./gradlew
+            ./gradlew connectedDebugAndroidTest
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: app/build/outputs/allure-results
