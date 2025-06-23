@@ -1,4 +1,4 @@
-name: UI Tests on Emulator
+name: UI Tests on Emulator (Kaspresso)
 
 on:
   push:
@@ -7,12 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  instrumentation-tests:
+  kaspresso-instrumentation-tests:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -20,29 +20,36 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
-      - name: Install Android SDK components
-        run: |
-          yes | sdkmanager --licenses
-          sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3" "system-images;android-30;google_apis;x86_64" "emulator"
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
 
-      - name: Create and start Android emulator
+      - name: Accept licenses
+        run: yes | sdkmanager --licenses
+
+      - name: Install emulator and system image
+        run: |
+          sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3" \
+                     "system-images;android-30;google_apis;x86_64" "emulator"
+
+      - name: Create AVD
         run: |
           echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
-          export PATH=$PATH:$ANDROID_HOME/emulator
-          emulator -avd test -no-window -no-audio -gpu off &
+
+      - name: Start emulator
+        run: |
+          emulator -avd test -no-audio -no-window -no-boot-anim -gpu swiftshader &
           adb wait-for-device
-          adb shell settings put global window_animation_scale 0
-          adb shell settings put global transition_animation_scale 0
-          adb shell settings put global animator_duration_scale 0
-          adb shell input keyevent 82 &
+          adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+          adb shell input keyevent 82 # разблокировка
 
       - name: Grant Gradle permissions
         run: chmod +x ./gradlew
 
-      - name: Run instrumentation tests
+      - name: Run Kaspresso tests
         run: ./gradlew connectedDebugAndroidTest
 
       - name: Upload Allure results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
