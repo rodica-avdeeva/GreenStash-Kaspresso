@@ -43,16 +43,6 @@ jobs:
         
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-
-      - name: Run UI tests on Emulator
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: ${{ env.ANDROID_API_LEVEL }}
-          target: ${{ env.ANDROID_TARGET }}
-          arch: ${{ env.ANDROID_ARCH }}
-          profile: ${{ env.ANDROID_PROFILE }}
-          script: |
-            ./gradlew connectedDebugAndroidTest
             
       - name: Run UI tests on Emulator
         uses: reactivecircus/android-emulator-runner@v2
