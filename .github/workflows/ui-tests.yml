@@ -53,12 +53,20 @@ jobs:
           profile: ${{ env.ANDROID_PROFILE }}
           script: |
             adb wait-for-device
+      
+            echo "📦 Проверим, виден ли instrumentation runner:"
+            adb shell pm list instrumentation
+      
+            echo "⏳ Ждём готовности UI и отключаем анимации..."
             adb shell settings put global window_animation_scale 0
             adb shell settings put global transition_animation_scale 0
             adb shell settings put global animator_duration_scale 0
             sleep 30
-            adb shell pm list instrumentation
-            ./gradlew connectedDebugAndroidTest --stacktrace
+      
+            echo "🚀 Запускаем тесты с явным указанием KaspressoRunner:"
+            ./gradlew connectedDebugAndroidTest \
+              -Pandroid.testInstrumentationRunner=com.kaspersky.kaspresso.runner.KaspressoRunner \
+              --stacktrace --info
 
 
       - name: Upload Allure results
