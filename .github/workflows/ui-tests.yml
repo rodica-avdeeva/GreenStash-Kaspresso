@@ -49,8 +49,8 @@ jobs:
 
       - name: Download Marathon CLI
         run: |
-          brew tap malinskiy/tap
-          brew install malinskiy/tap/marathon
+          curl -L "https://repo1.maven.org/maven2/com/malinskiy/marathon/marathon-cli/0.10.4/marathon-cli-0.10.4.zip" -o marathon.zip
+          unzip marathon.zip -d marathon-cli
 
       - name: Run UI tests on Emulator
         uses: reactivecircus/android-emulator-runner@v2
