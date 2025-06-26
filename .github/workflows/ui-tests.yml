@@ -49,8 +49,8 @@ jobs:
 
       - name: Download Marathon CLI
         run: |
-          curl -L https://github.com/MarathonLabs/marathon/releases/download/v0.10.4/marathon-0.10.4.zip -o marathon.zip
-          unzip marathon.zip -d marathon-cli
+          brew tap malinskiy/tap
+          brew install malinskiy/tap/marathon
 
       - name: Run UI tests on Emulator
         uses: reactivecircus/android-emulator-runner@v2
@@ -60,8 +60,7 @@ jobs:
           arch: ${{ env.ANDROID_ARCH }}
           profile: ${{ env.ANDROID_PROFILE }}
           script: |
-            export ANDROID_SDK_ROOT=$ANDROID_HOME
-            ./marathon-cli/marathon-0.10.4/bin/marathon run --config Marathonfile
+            marathon
 
       - name: Upload Allure results
         if: always()
