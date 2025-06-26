@@ -1,4 +1,4 @@
-name: Android UI Tests with Kaspresso
+name: Android UI Tests with Marathon
 
 on:
   push:
@@ -43,7 +43,15 @@ jobs:
         
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-            
+
+      - name: Build APKs
+        run: ./gradlew assembleDebug assembleAndroidTest
+
+      - name: Download Marathon CLI
+        run: |
+          curl -L https://github.com/MarathonLabs/marathon/releases/download/v0.10.4/marathon-0.10.4.zip -o marathon.zip
+          unzip marathon.zip -d marathon-cli
+
       - name: Run UI tests on Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -52,12 +60,12 @@ jobs:
           arch: ${{ env.ANDROID_ARCH }}
           profile: ${{ env.ANDROID_PROFILE }}
           script: |
-            echo "🚀 Запускаем тесты:"
-            ./gradlew connectedDebugAndroidTest
+            export ANDROID_SDK_ROOT=$ANDROID_HOME
+            ./marathon-cli/marathon-0.10.4/bin/marathon run --config Marathonfile
 
       - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}
-          path: app/build/allure-results/
+          path: build/reports/marathon/device-files/allure-results
