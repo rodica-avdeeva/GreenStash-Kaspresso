@@ -1,0 +1,24 @@
+name: "GreenStash-app tests"
+outputDir: "build/reports/marathon"
+vendorConfiguration:
+  type: "Android"
+  applicationApk: "app/build/outputs/apk/debug/GreenStash-v3.9.2.apk"
+  testApplicationApk: "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
+  disableWindowAnimation: false
+  autoGrantPermission: true
+  instrumentationArgs:
+    debug: "false"
+  applicationPmClear: true
+  testApplicationPmClear: true
+  waitForDevicesTimeoutMillis: 60000
+  allureConfiguration:
+    enabled: true
+    relativeResultsDirectory: "/Documents/allure-results"
+    pathRoot: "EXTERNAL_STORAGE"
+  testAccessConfiguration:
+    adb: true
+    grpc: true
+    console: true
+deviceInitializationTimeoutMillis: 180000
+uncompletedTestRetryQuota: 1
+debug: true
