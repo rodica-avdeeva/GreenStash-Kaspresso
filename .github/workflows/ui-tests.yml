@@ -60,8 +60,8 @@ jobs:
           arch: ${{ env.ANDROID_ARCH }}
           profile: ${{ env.ANDROID_PROFILE }}
           script: |
-            export ANDROID_SDK_ROOT=$ANDROID_HOME
-            ./marathon-cli/marathon-0.10.4/bin/marathon run --config Marathonfile
+           export ANDROID_SDK_ROOT=$ANDROID_HOME
+           ./marathon-cli/marathon-0.10.4/bin/marathon run Marathonfile
 
       - name: Upload Allure results
         if: always()
