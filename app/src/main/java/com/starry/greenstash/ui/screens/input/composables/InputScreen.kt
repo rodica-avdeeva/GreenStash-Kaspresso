@@ -104,6 +104,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
@@ -137,6 +138,7 @@ import com.starry.greenstash.BuildConfig
 import com.starry.greenstash.MainActivity
 import com.starry.greenstash.R
 import com.starry.greenstash.database.goal.GoalPriority
+import com.starry.greenstash.ui.C
 import com.starry.greenstash.ui.common.TipCard
 import com.starry.greenstash.ui.navigation.DrawerScreens
 import com.starry.greenstash.ui.screens.input.InputViewModel
@@ -482,7 +484,8 @@ fun InputScreen(editGoalId: String?, navController: NavController) {
                             },
                             modifier = Modifier
                                 .fillMaxWidth(0.86f)
-                                .height(45.dp),
+                                .height(45.dp)
+                                .testTag(C.GoalEditorScreen.savingGoalConfirmButton),
                             shape = RoundedCornerShape(14.dp),
                         ) {
                             Text(
@@ -852,7 +855,9 @@ private fun InputTextFields(
     OutlinedTextField(
         value = goalTitle,
         onValueChange = { newText -> onTitleChange(newText) },
-        modifier = Modifier.fillMaxWidth(0.86f),
+        modifier = Modifier
+            .fillMaxWidth(0.86f)
+            .testTag(C.GoalEditorScreen.goalTitleInput),
         label = {
             Text(
                 text = stringResource(id = R.string.input_text_title), fontFamily = greenstashFont
@@ -880,7 +885,9 @@ private fun InputTextFields(
     OutlinedTextField(
         value = targetAmount,
         onValueChange = { newText -> onAmountChange(NumberUtils.getValidatedNumber(newText)) },
-        modifier = Modifier.fillMaxWidth(0.86f),
+        modifier = Modifier
+            .fillMaxWidth(0.86f)
+            .testTag(C.GoalEditorScreen.targetAmountInput),
         label = {
             Text(
                 text = stringResource(id = R.string.input_text_amount), fontFamily = greenstashFont
