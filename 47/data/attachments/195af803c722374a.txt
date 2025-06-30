@@ -1,0 +1,103 @@
+--------- beginning of main
+06-30 14:49:25.938  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:25.943  4718  4811 I KASPRESSO: Logcat buffer may be dumped from 06-30 14:49:25.938
+06-30 14:49:26.233  4718  4811 I KASPRESSO: Starting video recording: Video_WelcomeTest.mp4
+06-30 14:49:26.235  4718  4811 I KASPRESSO: Waiting for 3000 ms
+06-30 14:49:26.399  4718  4920 D KASPRESSO: Display resolution: 1080x1794; supported codec resolution: 2048x2048
+06-30 14:49:26.399  4718  4920 D KASPRESSO: Starting video recording with resolution 1080x1794
+06-30 14:49:29.236  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:49:29.236  4718  4811 I KASPRESSO: BEFORE TEST SECTION
+06-30 14:49:29.236  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:49:29.237  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:49:29.237  4718  4811 I KASPRESSO: TEST SECTION
+06-30 14:49:29.237  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:49:29.237  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:29.237  4718  4811 I KASPRESSO: TEST STEP: "1. Open currency selector" in WelcomeTest
+06-30 14:49:29.240  4718  4811 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 14:49:29.240  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 14:49:30.600  4718  4811 I KASPRESSO: TEST STEP: "1. Open currency selector" in WelcomeTest SUCCEED. It took 0 minutes, 1 seconds and 363 millis. 
+06-30 14:49:30.600  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:30.997  4718  4811 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/WelcomeTest_step_1.png
+06-30 14:49:31.014  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:31.014  4718  4811 I KASPRESSO: TEST STEP: "2. Search and select Albanian lek" in WelcomeTest
+06-30 14:49:31.015  4718  4811 I KASPRESSO: Operation: Perform=PERFORM_TEXT_INPUT(description={null}).
+06-30 14:49:31.015  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySearchInput'); position: 0; useUnmergedTree: false.
+06-30 14:49:35.648  4718  4811 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 14:49:35.648  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencyOptionItem'); position: 0; useUnmergedTree: false.
+06-30 14:49:36.976  4718  4811 I KASPRESSO: TEST STEP: "2. Search and select Albanian lek" in WelcomeTest SUCCEED. It took 0 minutes, 5 seconds and 962 millis. 
+06-30 14:49:36.976  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:37.898  4718  4811 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/WelcomeTest_step_2.png
+06-30 14:49:37.899  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:37.902  4718  4811 I KASPRESSO: TEST STEP: "3. Confirm selected currency" in WelcomeTest
+06-30 14:49:37.904  4718  4811 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 14:49:37.904  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'ConfirmButton'); position: 0; useUnmergedTree: false.
+06-30 14:49:38.286  4718  4811 I KASPRESSO: TEST STEP: "3. Confirm selected currency" in WelcomeTest SUCCEED. It took 0 minutes, 0 seconds and 387 millis. 
+06-30 14:49:38.287  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:39.205  4718  4811 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/WelcomeTest_step_3.png
+06-30 14:49:39.207  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:49:39.208  4718  4811 I KASPRESSO: TEST STEP: "4. Verify selected currency is displayed" in WelcomeTest
+06-30 14:49:39.211  4718  4811 I KASPRESSO: Operation: Check=ASSERT_TEXT_CONTAINS(description={null}).
+06-30 14:49:39.211  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 14:49:39.763  4718  4811 I KASPRESSO: SemanticsNodeInteraction autoscroll successfully performed.
+06-30 14:49:39.764  4718  4811 I KASPRESSO: Operation: Check=ASSERT_TEXT_CONTAINS(description={null}).
+06-30 14:49:39.764  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 14:49:39.779  4718  4811 I KASPRESSO: SemanticsNodeInteraction autoscroll did not help. Throwing exception.
+06-30 14:49:40.698  4718  4811 I KASPRESSO: Found system view:  resourceName=com.google.android.inputmethod.latin:id/host applicationPackage=com.google.android.inputmethod.latin className=android.widget.FrameLayout childCount=2 isCheckable=false isChecked=false isClickable=false isLongClickable=false isEnabled=true isFocusable=false isFocused=false isScrollable=false
+06-30 14:49:40.698  4718  4811 I KASPRESSO: System dialogs safety: the android system dialog/window was detected
+06-30 14:49:40.698  4718  4811 I KASPRESSO: The suppressing of SystemDialogs starts
+06-30 14:49:40.698  4718  4811 I KASPRESSO: The suppressing of SystemDialogs on the try #0 starts
+06-30 14:49:40.700  4718  4811 I KASPRESSO: AdbServer. The command to execute=shell, arguments=[input, keyevent, KEYCODE_BACK]
+06-30 14:49:45.940  4718  4811 I KASPRESSO: AdbServer. The command=shell with arguments=[] was performed with result=CommandResult(status=TIMEOUT, description=The time for the connection establishment is over, serviceInfo=null)
+06-30 14:49:45.941  4718  4811 I KASPRESSO: The try #0 of the suppressing of SystemDialogs failed
+06-30 14:49:46.229  4718  4811 I KASPRESSO: Found system view:  resourceName=com.google.android.inputmethod.latin:id/host applicationPackage=com.google.android.inputmethod.latin className=android.widget.FrameLayout childCount=2 isCheckable=false isChecked=false isClickable=false isLongClickable=false isEnabled=true isFocusable=false isFocused=false isScrollable=false
+06-30 14:49:46.230  4718  4811 I KASPRESSO: System dialogs safety: the android system dialog/window was detected
+06-30 14:49:46.230  4718  4811 I KASPRESSO: The suppressing of SystemDialogs on the try #1 starts
+06-30 14:49:49.779  4718  4811 I KASPRESSO: The try #1 of the suppressing of SystemDialogs failed
+06-30 14:49:51.543  4718  4811 I KASPRESSO: Found system view:  resourceName=com.google.android.inputmethod.latin:id/host applicationPackage=com.google.android.inputmethod.latin className=android.widget.FrameLayout childCount=2 isCheckable=false isChecked=false isClickable=false isLongClickable=false isEnabled=true isFocusable=false isFocused=false isScrollable=false
+06-30 14:49:51.543  4718  4811 I KASPRESSO: System dialogs safety: the android system dialog/window was detected
+06-30 14:49:51.543  4718  4811 I KASPRESSO: The suppressing of SystemDialogs on the try #2 starts
+06-30 14:49:53.648  4718  4811 I KASPRESSO: The try #2 of the suppressing of SystemDialogs failed
+06-30 14:49:53.773  4718  4811 I KASPRESSO: Found system view:  resourceName=com.google.android.inputmethod.latin:id/host applicationPackage=com.google.android.inputmethod.latin className=android.widget.FrameLayout childCount=2 isCheckable=false isChecked=false isClickable=false isLongClickable=false isEnabled=true isFocusable=false isFocused=false isScrollable=false
+06-30 14:49:53.774  4718  4811 I KASPRESSO: System dialogs safety: the android system dialog/window was detected
+06-30 14:49:53.774  4718  4811 I KASPRESSO: The suppressing of SystemDialogs on the try #3 starts
+06-30 14:49:55.843  4718  4811 I KASPRESSO: The try #3 of the suppressing of SystemDialogs failed
+06-30 14:49:55.962  4718  4811 I KASPRESSO: Found system view:  resourceName=com.google.android.inputmethod.latin:id/host applicationPackage=com.google.android.inputmethod.latin className=android.widget.FrameLayout childCount=2 isCheckable=false isChecked=false isClickable=false isLongClickable=false isEnabled=true isFocusable=false isFocused=false isScrollable=false
+06-30 14:49:55.962  4718  4811 I KASPRESSO: System dialogs safety: the android system dialog/window was detected
+06-30 14:49:55.962  4718  4811 I KASPRESSO: The suppressing of SystemDialogs on the try #4 starts
+06-30 14:49:57.991  4718  4811 I KASPRESSO: The try #4 of the suppressing of SystemDialogs failed
+06-30 14:49:58.210  4718  4811 I KASPRESSO: Found system view:  resourceName=com.google.android.inputmethod.latin:id/host applicationPackage=com.google.android.inputmethod.latin className=android.widget.FrameLayout childCount=2 isCheckable=false isChecked=false isClickable=false isLongClickable=false isEnabled=true isFocusable=false isFocused=false isScrollable=false
+06-30 14:49:58.210  4718  4811 I KASPRESSO: System dialogs safety: the android system dialog/window was detected
+06-30 14:49:58.210  4718  4811 I KASPRESSO: The suppressing of SystemDialogs on the try #5 starts
+06-30 14:50:00.471  4718  4811 I KASPRESSO: The try #5 of the suppressing of SystemDialogs failed
+06-30 14:50:01.159  4718  4811 I KASPRESSO: Found system view:  resourceName=com.google.android.inputmethod.latin:id/host applicationPackage=com.google.android.inputmethod.latin className=android.widget.FrameLayout childCount=2 isCheckable=false isChecked=false isClickable=false isLongClickable=false isEnabled=true isFocusable=false isFocused=false isScrollable=false
+06-30 14:50:01.159  4718  4811 I KASPRESSO: System dialogs safety: the android system dialog/window was detected
+06-30 14:50:01.159  4718  4811 I KASPRESSO: The suppressing of SystemDialogs on the try #6 starts
+06-30 14:50:01.581  4718  4811 I KASPRESSO: Operation: Check=ASSERT_TEXT_CONTAINS(description={null}).
+06-30 14:50:01.581  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 14:50:02.582  4718  4811 I KASPRESSO: SemanticsNodeInteraction autoscroll successfully performed.
+06-30 14:50:02.582  4718  4811 I KASPRESSO: Operation: Check=ASSERT_TEXT_CONTAINS(description={null}).
+06-30 14:50:02.582  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 14:50:02.622  4718  4811 I KASPRESSO: SemanticsNodeInteraction autoscroll did not help. Throwing exception.
+06-30 14:50:02.622  4718  4811 I KASPRESSO: The try #6 of the suppressing of SystemDialogs failed
+06-30 14:50:04.927  4718  4811 I KASPRESSO: The try #6 of the suppressing of SystemDialogs failed. The reason is the error is not allowed or android system dialog is suppressed but the error is existing
+06-30 14:50:04.927  4718  4811 I KASPRESSO: Reloading of the element is started
+06-30 14:50:04.928  4718  4811 I KASPRESSO: Reloading of the element is finished
+06-30 14:50:04.928  4718  4811 I KASPRESSO: Repeat action again with the reloaded element
+06-30 14:50:04.934  4718  4811 I KASPRESSO: Operation: Check=ASSERT_TEXT_CONTAINS(description={null}).
+06-30 14:50:04.934  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 14:50:04.956  4718  4811 I KASPRESSO: SemanticsNodeInteraction autoscroll successfully performed.
+06-30 14:50:04.956  4718  4811 I KASPRESSO: Operation: Check=ASSERT_TEXT_CONTAINS(description={null}).
+06-30 14:50:04.956  4718  4811 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 14:50:04.974  4718  4811 I KASPRESSO: SemanticsNodeInteraction autoscroll did not help. Throwing exception.
+06-30 14:50:07.860  4718  4811 E KASPRESSO: All attempts to interact for 10000 ms totally failed because of AssertionError
+06-30 14:50:07.860  4718  4811 I KASPRESSO: TEST STEP: "4. Verify selected currency is displayed" in WelcomeTest FAILED. It took 0 minutes, 28 seconds and 654 millis. 
+06-30 14:50:07.860  4718  4811 I KASPRESSO: ___________________________________________________________________________
+06-30 14:50:07.995  4718  4811 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/WelcomeTest_step_4_failure_AssertionError.png
+06-30 14:50:08.030  4718  4811 I KASPRESSO: View hierarchy dumped to /data/user/0/com.starry.greenstash/files/view_hierarchy/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/ViewHierarchy_MainTestSection_failure_AssertionError.xml
+06-30 14:50:08.030  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:50:08.030  4718  4811 I KASPRESSO: AFTER TEST SECTION
+06-30 14:50:08.030  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:50:08.030  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:50:08.030  4718  4811 I KASPRESSO: TEST FAILED
+06-30 14:50:08.030  4718  4811 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 14:50:08.031  4718  4811 I KASPRESSO: Dump logcat buffer to /data/user/0/com.starry.greenstash/files/logcat/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/TestLogcat.txt: logcat -b default -d -t "06-30 14:49:25.938" -s "KASPRESSO","KASPRESSO_TEST"
