@@ -56,6 +56,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -65,6 +66,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.starry.greenstash.ui.C
 
 
 /**
@@ -138,7 +140,8 @@ fun CurrencyPicker(
                         onValueChange = onSearchTextChanged,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(16.dp),
+                            .padding(16.dp)
+                            .testTag(C.CurrencyPicker.currencySearchInput),
                         placeholder = { Text("Search currency") },
                         leadingIcon = {
                             Icon(
@@ -163,7 +166,8 @@ fun CurrencyPicker(
                                             onCurrencyOptionSelected(text)
                                         },
                                         role = Role.RadioButton
-                                    ),
+                                    )
+                                    .testTag(C.CurrencyPicker.currencyOptionItem),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Row(modifier = Modifier.padding(horizontal = 18.dp)) {
@@ -191,7 +195,8 @@ fun CurrencyPicker(
                 Button(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
+                        .padding(16.dp)
+                        .testTag(C.CurrencyPicker.confirmButton),
                     onClick = {
                         coroutineScope.launch {
                             sheetState.hide()

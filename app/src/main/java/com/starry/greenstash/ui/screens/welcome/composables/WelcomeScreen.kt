@@ -53,6 +53,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -66,6 +67,7 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.starry.greenstash.R
+import com.starry.greenstash.ui.C
 import com.starry.greenstash.ui.common.CurrencyPicker
 import com.starry.greenstash.ui.common.CurrencyPickerData
 import com.starry.greenstash.ui.common.SlideInAnimatedContainer
@@ -146,7 +148,8 @@ fun WelcomeScreen(navController: NavController) {
                     onClick = { currencyDialog.value = true },
                     modifier = Modifier
                         .width(245.dp)
-                        .animateContentSize(),
+                        .animateContentSize()
+                        .testTag(C.WelcomeScreen.currencySelectorButton),
                     shape = RoundedCornerShape(16.dp),
                 ) {
                     Text(
@@ -166,7 +169,9 @@ fun WelcomeScreen(navController: NavController) {
                         navController.popBackStack()
                         navController.navigate(DrawerScreens.Home)
                     },
-                    modifier = Modifier.width(245.dp),
+                    modifier = Modifier
+                        .width(245.dp)
+                        .testTag(C.WelcomeScreen.getStartedButton),
                     shape = RoundedCornerShape(16.dp)
                 ) {
                     Text(
