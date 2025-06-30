@@ -1,0 +1,85 @@
+--------- beginning of main
+06-30 17:26:09.760  2811  3084 I KASPRESSO: Logcat buffer may be dumped from 06-30 17:26:09.665
+06-30 17:26:10.166  2811  3084 I KASPRESSO: Starting video recording: Video_AddNewGoalTest.mp4
+06-30 17:26:10.167  2811  3084 I KASPRESSO: Waiting for 3000 ms
+06-30 17:26:10.209  2811  3320 D KASPRESSO: Display resolution: 1080x1794; supported codec resolution: 2048x2048
+06-30 17:26:10.209  2811  3320 D KASPRESSO: Starting video recording with resolution 1080x1794
+06-30 17:26:13.167  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:13.167  2811  3084 I KASPRESSO: BEFORE TEST SECTION
+06-30 17:26:13.167  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:13.168  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:13.168  2811  3084 I KASPRESSO: TEST SECTION
+06-30 17:26:13.168  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:13.168  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:13.168  2811  3084 I KASPRESSO: TEST STEP: "1. Open the goal creation screen" in AddNewGoalTest
+06-30 17:26:13.173  2811  3084 I KASPRESSO: Operation: Check=IS_DISPLAYED(description={null}).
+06-30 17:26:13.173  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'NewGoalButton'); position: 0; useUnmergedTree: false.
+06-30 17:26:14.714  2811  3084 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 17:26:14.714  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'NewGoalButton'); position: 0; useUnmergedTree: false.
+06-30 17:26:15.009  2811  3084 I KASPRESSO: TEST STEP: "1. Open the goal creation screen" in AddNewGoalTest SUCCEED. It took 0 minutes, 1 seconds and 841 millis. 
+06-30 17:26:15.009  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:16.257  2811  3084 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/AddNewGoalTest_step_1.png
+06-30 17:26:16.258  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:16.258  2811  3084 I KASPRESSO: TEST STEP: "2. Enter the goal title" in AddNewGoalTest
+06-30 17:26:16.259  2811  3084 I KASPRESSO: Operation: Check=IS_DISPLAYED(description={null}).
+06-30 17:26:16.259  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'GoalTitleInput'); position: 0; useUnmergedTree: false.
+06-30 17:26:18.208  2811  3084 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 17:26:18.208  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'GoalTitleInput'); position: 0; useUnmergedTree: false.
+06-30 17:26:19.129  2811  3084 I KASPRESSO: Operation: Perform=PERFORM_TEXT_INPUT(description={null}).
+06-30 17:26:19.129  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'GoalTitleInput'); position: 0; useUnmergedTree: false.
+06-30 17:26:20.575  2811  3084 I KASPRESSO: TEST STEP: "2. Enter the goal title" in AddNewGoalTest SUCCEED. It took 0 minutes, 4 seconds and 317 millis. 
+06-30 17:26:20.575  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:22.105  2811  3084 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/AddNewGoalTest_step_2.png
+06-30 17:26:22.106  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:22.106  2811  3084 I KASPRESSO: TEST STEP: "3. Enter the target amount" in AddNewGoalTest
+06-30 17:26:22.106  2811  3084 I KASPRESSO: Operation: Check=IS_DISPLAYED(description={null}).
+06-30 17:26:22.106  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'TargetAmountInput'); position: 0; useUnmergedTree: false.
+06-30 17:26:23.727  2811  3084 I KASPRESSO: SemanticsNodeInteraction autoscroll successfully performed.
+06-30 17:26:23.727  2811  3084 I KASPRESSO: Operation: Check=IS_DISPLAYED(description={null}).
+06-30 17:26:23.727  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'TargetAmountInput'); position: 0; useUnmergedTree: false.
+06-30 17:26:23.732  2811  3084 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 17:26:23.732  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'TargetAmountInput'); position: 0; useUnmergedTree: false.
+06-30 17:26:23.887  2811  3084 I KASPRESSO: Operation: Perform=PERFORM_TEXT_INPUT(description={null}).
+06-30 17:26:23.887  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'TargetAmountInput'); position: 0; useUnmergedTree: false.
+06-30 17:26:25.388  2811  3084 I KASPRESSO: TEST STEP: "3. Enter the target amount" in AddNewGoalTest SUCCEED. It took 0 minutes, 3 seconds and 282 millis. 
+06-30 17:26:25.388  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:25.561  2811  3084 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/AddNewGoalTest_step_3.png
+06-30 17:26:25.562  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:25.562  2811  3084 I KASPRESSO: TEST STEP: "4. Save the new goal" in AddNewGoalTest
+06-30 17:26:25.563  2811  3084 I KASPRESSO: Operation: Perform=PERFORM_SCROLL_TO(description={null}).
+06-30 17:26:25.563  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'SavingGoalConfirmButton'); position: 0; useUnmergedTree: false.
+06-30 17:26:26.123  2811  3084 I KASPRESSO: Operation: Check=IS_DISPLAYED(description={null}).
+06-30 17:26:26.123  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'SavingGoalConfirmButton'); position: 0; useUnmergedTree: false.
+06-30 17:26:26.162  2811  3084 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 17:26:26.162  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'SavingGoalConfirmButton'); position: 0; useUnmergedTree: false.
+06-30 17:26:26.215  2811  3084 I KASPRESSO: TEST STEP: "4. Save the new goal" in AddNewGoalTest SUCCEED. It took 0 minutes, 0 seconds and 653 millis. 
+06-30 17:26:26.215  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:26.913  2811  3084 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/AddNewGoalTest_step_4.png
+06-30 17:26:26.914  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:26.914  2811  3084 I KASPRESSO: TEST STEP: "5. Verify that the goal was added" in AddNewGoalTest
+06-30 17:26:26.915  2811  3084 I KASPRESSO: Operation: Check=IS_DISPLAYED(description={null}).
+06-30 17:26:26.915  2811  3084 I KASPRESSO: ComposeInteraction: matcher: Empty matcher; position: 0; useUnmergedTree: false.
+06-30 17:26:30.117  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:30.117  2811  3084 I KASPRESSO: TEST STEP: "5.1. Check that the goal title is displayed" in AddNewGoalTest
+06-30 17:26:30.118  2811  3084 I KASPRESSO: Operation: Check=ASSERT_TEXT_EQUALS(description={null}).
+06-30 17:26:30.118  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'GoalTitleText'); position: 0; useUnmergedTree: false.
+06-30 17:26:30.135  2811  3084 I KASPRESSO: TEST STEP: "5.1. Check that the goal title is displayed" in AddNewGoalTest SUCCEED. It took 0 minutes, 0 seconds and 18 millis. 
+06-30 17:26:30.135  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:30.512  2811  3084 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/AddNewGoalTest_step_6.png
+06-30 17:26:30.513  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:30.513  2811  3084 I KASPRESSO: TEST STEP: "5.2. Check that the target amount is correct" in AddNewGoalTest
+06-30 17:26:30.514  2811  3084 I KASPRESSO: Operation: Check=ASSERT_TEXT_CONTAINS(description={null}).
+06-30 17:26:30.514  2811  3084 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'GoalStatusText'); position: 0; useUnmergedTree: false.
+06-30 17:26:30.533  2811  3084 I KASPRESSO: TEST STEP: "5.2. Check that the target amount is correct" in AddNewGoalTest SUCCEED. It took 0 minutes, 0 seconds and 20 millis. 
+06-30 17:26:30.534  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:30.799  2811  3084 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/AddNewGoalTest_step_7.png
+06-30 17:26:30.799  2811  3084 I KASPRESSO: TEST STEP: "5. Verify that the goal was added" in AddNewGoalTest SUCCEED. It took 0 minutes, 3 seconds and 885 millis. 
+06-30 17:26:30.799  2811  3084 I KASPRESSO: ___________________________________________________________________________
+06-30 17:26:31.051  2811  3084 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/AddNewGoalTest_step_5.png
+06-30 17:26:31.051  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:31.051  2811  3084 I KASPRESSO: AFTER TEST SECTION
+06-30 17:26:31.051  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:31.051  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:31.051  2811  3084 I KASPRESSO: TEST PASSED
+06-30 17:26:31.051  2811  3084 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 17:26:31.053  2811  3084 I KASPRESSO: Dump logcat buffer to /data/user/0/com.starry.greenstash/files/logcat/com.starry.greenstash.tests.AddNewGoalTest/addNewGoalTest/TestLogcat.txt: logcat -b default -d -t "06-30 17:26:09.665" -s "KASPRESSO","KASPRESSO_TEST"
