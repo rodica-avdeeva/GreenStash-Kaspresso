@@ -15,6 +15,7 @@ env:
   ARTIFACT_NAME: allure-results
   MARATHON_VERSION: '0.10.4'
   MARATHON_URL: https://github.com/MarathonLabs/marathon/releases/download/0.10.4/marathon-0.10.4.zip
+  GH_PAGES_URL: https://rodica-avdeeva.github.io/GreenStash-Kaspresso
 
 defaults:
   run:
@@ -114,3 +115,13 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
+
+      - name: Post Allure report link in PR
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: 'Allure Report'
+          state: 'success'
+          sha: ${{ github.event.pull_request.head.sha || github.sha }}
+          target_url: ${{ env.GH_PAGES_URL }}/report/${{ github.run_number }}/index.html
