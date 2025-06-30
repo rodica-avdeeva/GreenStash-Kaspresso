@@ -69,6 +69,10 @@ jobs:
           arch: ${{ env.ANDROID_ARCH }}
           profile: ${{ env.ANDROID_PROFILE }}
           script: |
+            echo "Enabling animations..."
+            adb shell settings put global window_animation_scale 1
+            adb shell settings put global transition_animation_scale 1
+            adb shell settings put global animator_duration_scale 1
             export ANDROID_SDK_ROOT=$ANDROID_HOME
             ./marathon-cli/marathon-${{ env.MARATHON_VERSION }}/bin/marathon -m Marathonfile run || echo "UI tests failed"
 
