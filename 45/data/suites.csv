@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","23008","selectCurrencyTest","","Mon Jun 30 12:08:30 GMT 2025","failed","Mon Jun 30 12:08:53 GMT 2025","","com.starry.greenstash.tests.WelcomeTest","com.starry.greenstash.tests.WelcomeTest","selectCurrencyTest"
+"","49969","addNewGoalTest","","Mon Jun 30 12:07:28 GMT 2025","failed","Mon Jun 30 12:08:18 GMT 2025","","com.starry.greenstash.tests.AddNewGoalTest","com.starry.greenstash.tests.AddNewGoalTest","addNewGoalTest"
+"","43439","editGoalTest","","Mon Jun 30 12:08:59 GMT 2025","failed","Mon Jun 30 12:09:43 GMT 2025","","com.starry.greenstash.tests.EditGoalTest","com.starry.greenstash.tests.EditGoalTest","editGoalTest"

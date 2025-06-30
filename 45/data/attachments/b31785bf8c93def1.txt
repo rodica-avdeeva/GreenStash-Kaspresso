@@ -1,0 +1,44 @@
+--------- beginning of main
+06-30 12:08:35.377  4237  4396 I KASPRESSO: Logcat buffer may be dumped from 06-30 12:08:35.350
+06-30 12:08:35.894  4237  4396 I KASPRESSO: Starting video recording: Video_WelcomeTest.mp4
+06-30 12:08:35.896  4237  4396 I KASPRESSO: Waiting for 3000 ms
+06-30 12:08:35.948  4237  4510 D KASPRESSO: Display resolution: 1080x1794; supported codec resolution: 2048x2048
+06-30 12:08:35.949  4237  4510 D KASPRESSO: Starting video recording with resolution 1080x1794
+06-30 12:08:38.899  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:38.900  4237  4396 I KASPRESSO: BEFORE TEST SECTION
+06-30 12:08:38.900  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:38.905  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:38.906  4237  4396 I KASPRESSO: TEST SECTION
+06-30 12:08:38.906  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:38.909  4237  4396 I KASPRESSO: ___________________________________________________________________________
+06-30 12:08:38.911  4237  4396 I KASPRESSO: TEST STEP: "1. Open currency selector" in WelcomeTest
+06-30 12:08:38.929  4237  4396 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 12:08:38.929  4237  4396 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 12:08:39.088  4237  4396 I KASPRESSO: SemanticsNodeInteraction autoscroll did not help. Throwing exception.
+06-30 12:08:41.223  4237  4396 I KASPRESSO: Reloading of the element is started
+06-30 12:08:41.223  4237  4396 I KASPRESSO: Reloading of the element is finished
+06-30 12:08:41.223  4237  4396 I KASPRESSO: Repeat action again with the reloaded element
+06-30 12:08:41.223  4237  4396 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 12:08:41.223  4237  4396 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 12:08:41.276  4237  4396 I KASPRESSO: SemanticsNodeInteraction autoscroll did not help. Throwing exception.
+06-30 12:08:44.162  4237  4396 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 12:08:44.162  4237  4396 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 12:08:44.187  4237  4396 I KASPRESSO: SemanticsNodeInteraction autoscroll did not help. Throwing exception.
+06-30 12:08:46.238  4237  4396 I KASPRESSO: Reloading of the element is started
+06-30 12:08:46.238  4237  4396 I KASPRESSO: Reloading of the element is finished
+06-30 12:08:46.238  4237  4396 I KASPRESSO: Repeat action again with the reloaded element
+06-30 12:08:46.238  4237  4396 I KASPRESSO: Operation: Perform=PERFORM_CLICK(description={null}).
+06-30 12:08:46.238  4237  4396 I KASPRESSO: ComposeInteraction: matcher: (hasAnyAncestorThat(Empty matcher)) && (TestTag = 'CurrencySelectorButton'); position: 0; useUnmergedTree: false.
+06-30 12:08:46.275  4237  4396 I KASPRESSO: SemanticsNodeInteraction autoscroll did not help. Throwing exception.
+06-30 12:08:49.124  4237  4396 E KASPRESSO: All attempts to interact for 10000 ms totally failed because of AssertionError
+06-30 12:08:49.125  4237  4396 I KASPRESSO: TEST STEP: "1. Open currency selector" in WelcomeTest FAILED. It took 0 minutes, 10 seconds and 216 millis. 
+06-30 12:08:49.125  4237  4396 I KASPRESSO: ___________________________________________________________________________
+06-30 12:08:49.409  4237  4396 I KASPRESSO: Screenshot saved to /data/user/0/com.starry.greenstash/files/screenshots/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/WelcomeTest_step_1_failure_AssertionError.png
+06-30 12:08:49.455  4237  4396 I KASPRESSO: View hierarchy dumped to /data/user/0/com.starry.greenstash/files/view_hierarchy/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/ViewHierarchy_MainTestSection_failure_AssertionError.xml
+06-30 12:08:49.457  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:49.457  4237  4396 I KASPRESSO: AFTER TEST SECTION
+06-30 12:08:49.457  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:49.458  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:49.458  4237  4396 I KASPRESSO: TEST FAILED
+06-30 12:08:49.458  4237  4396 I KASPRESSO: ---------------------------------------------------------------------------
+06-30 12:08:49.461  4237  4396 I KASPRESSO: Dump logcat buffer to /data/user/0/com.starry.greenstash/files/logcat/com.starry.greenstash.tests.WelcomeTest/selectCurrencyTest/TestLogcat.txt: logcat -b default -d -t "06-30 12:08:35.350" -s "KASPRESSO","KASPRESSO_TEST"
